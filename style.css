@@ -1,163 +1,237 @@
-/* Reset */ 
-* { 
-margin: 0; 
-padding: 0; 
-box-sizing: border-box; 
-} 
-body { 
-    font-family: Arial, sans-serif; 
-    background-color: #f5f5f5; 
-    color: #333; 
-    line-height: 1.6; 
-} 
- 
-/* Header */ 
-body > header { 
-    background-color: white; 
-    padding: 20px; 
-    border-bottom: 1px solid #ddd; 
-} 
- 
-body > header h1 { 
-    max-width: 900px; 
-    margin: auto; 
-} 
- 
-/* Navigation */ 
-nav { 
-    max-width: 900px; 
-    margin: auto; 
-} 
- 
-nav ul { 
-    display: flex; 
-    gap: 20px; 
-    list-style: none; 
-} 
- 
-nav a { 
-    color: #333; 
-    text-decoration: none; 
-} 
- 
-nav a:hover { 
-    color: #0d6efd; 
-} 
- 
-/* Main */ 
-main { 
-    max-width: 900px; 
-    margin: 30px auto; 
-    padding: 0 20px; 
-} 
- 
-section { 
-    background-color: white; 
-    padding: 25px; 
-} 
- 
-/* Gambar */ 
-main img { 
-    display: block; 
-    max-width: 100%; 
-    height: auto; 
-    margin: 0; 
-} 
- 
-/* Judul */ 
-h2 { 
-    margin-bottom: 15px; 
-} 
- 
-h3 { 
-    margin-bottom: 5px; 
-} 
- 
-/* Project */ 
-#project { 
-    margin-top: 30px; 
-} 
- 
-article { 
-    padding: 15px 0; 
-    border-bottom: 1px solid #ddd; 
-} 
- 
-article:last-child { 
-    border-bottom: none; 
-} 
- 
-/* Form */ 
-form { 
-    margin-top: 20px; 
-} 
- 
-form p { 
-    margin-bottom: 15px; 
-} 
- 
-label { 
-    display: inline-block; 
-    margin-bottom: 5px; 
-} 
- 
-input[type="text"], 
-input[type="email"], 
-select, 
-textarea { 
-    width: 100%; 
-    padding: 9px; 
-    border: 1px solid #ccc; 
-    font-family: Arial, sans-serif; 
-} 
-textarea { 
-resize: vertical; 
-} 
-button { 
-padding: 9px 15px; 
-border: none; 
-background-color: #333; 
-color: white; 
-cursor: pointer; 
-} 
-button[type="reset"] { 
-background-color: #888; 
-} 
-button:hover { 
-opacity: 0.8; 
-} 
-/* Aside */ 
-aside { 
-max-width: 900px; 
-margin: 30px auto; 
-padding: 20px; 
-background-color: white; 
-border-left: 3px solid #0d6efd; 
-} 
-/* Footer */ 
-footer { 
-padding: 20px; 
-text-align: center; 
-color: #777; 
-font-size: 14px; 
-} 
-/* Garis <hr> */ 
-hr { 
-display: none; 
-} 
-main { 
-margin-top: 20px; 
-/* Tampilan HP */ 
-@media (max-width: 700px) { 
-nav ul { 
-flex-direction: column; 
-gap: 8px; 
-} 
-} 
-main img { 
-margin: 0 auto; 
-} 
-section { 
-padding: 20px; 
-} 
+
+/* ==========================
+   PORTOFOLIO JARVIS
+   Modern Dark Purple Theme
+   ========================== */
+
+:root {
+    --bg: #0b1020;
+    --surface: #151c30;
+    --surface-hover: #1c2640;
+    --primary: #a78bfa;
+    --primary-hover: #8b5cf6;
+    --text: #f1f5f9;
+    --muted: #a5b4cc;
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:
+        radial-gradient(circle at top right, #25204a 0, transparent 35%),
+        var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+/* Header utama */
+body > header {
+    text-align: center;
+    padding: 65px 20px 35px;
+    background: linear-gradient(
+        135deg,
+        rgba(139, 92, 246, 0.18),
+        rgba(11, 16, 32, 0.2)
+    );
+    border-bottom: 1px solid var(--border);
+}
+
+body > header h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+}
+
+body > header h1::after {
+    content: ".";
+    color: var(--primary);
+}
+
+/* Navigasi */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--muted);
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: white;
+    background: rgba(167, 139, 250, 0.12);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* Konten utama */
+main {
+    width: min(100% - 40px, 900px);
+    margin: 45px auto;
+}
+
+section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 30px;
+    margin-bottom: 28px;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    transition: border-color 0.3s ease;
+}
+
+section:hover {
+    border-color: rgba(167, 139, 250, 0.4);
+}
+
+section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+section p {
+    color: var(--muted);
+}
+
+/* Daftar proyek */
+article {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+/* Kartu proyek */
+article > header {
+    background: var(--surface-hover);
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    transition: 0.3s ease;
+}
+
+article > header:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.12);
+}
+
+article h3:first-child {
+    color: var(--text);
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+article h3:nth-child(2) {
+    color: var(--primary);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+article ul {
+    padding-left: 20px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+article li {
+    margin-bottom: 5px;
+}
+
+article li::marker {
+    color: var(--primary);
+}
+
+/* Status pekerjaan */
+aside {
+    width: min(100% - 40px, 900px);
+    margin: 0 auto 45px;
+    padding: 24px 28px;
+    background: rgba(34, 197, 94, 0.08);
+    border: 1px solid rgba(74, 222, 128, 0.25);
+    border-radius: 14px;
+}
+
+aside h3 {
+    color: #86efac;
+    margin-bottom: 5px;
+}
+
+aside p {
+    color: var(--muted);
+}
+
+/* Footer */
+body > footer {
+    text-align: center;
+    padding: 24px 15px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+/* Garis pemisah */
+hr {
+    display: none;
+}
+
+/* Tampilan tablet dan HP */
+@media (max-width: 650px) {
+    body > header {
+        padding: 45px 15px 28px;
+    }
+
+    main {
+        width: calc(100% - 28px);
+        margin: 25px auto;
+    }
+
+    section {
+        padding: 22px 18px;
+        border-radius: 14px;
+    }
+
+    section h2 {
+        font-size: 21px;
+    }
+
+    article {
+        grid-template-columns: 1fr;
+    }
+
+    article > header {
+        padding: 20px;
+    }
+
+    aside {
+        width: calc(100% - 28px);
+        padding: 20px;
+        margin-bottom: 30px;
+    }
 }
